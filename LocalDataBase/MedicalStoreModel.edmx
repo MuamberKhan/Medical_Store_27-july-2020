@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MedicalStore_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="BillAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BillDate" Type="datetime" Nullable="false" />
+          <Property Name="BillStatus" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillMedicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedicineID" Type="int" Nullable="false" />
+          <Property Name="BilIID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MedSellPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MedPurchasePrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsLacking" Type="bit" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="MedStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="MedDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="MedType" Type="int" />
+          <Property Name="SoldQuantity" Type="int" />
+        </EntityType>
+        <EntityType Name="PateintRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Diagnosis" Type="nvarchar" MaxLength="500" />
+          <Property Name="Treatment" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="AppointmentDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PatientType" Type="int" />
+          <Property Name="PatientAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RecordsMedicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecordID" Type="int" Nullable="false" />
+          <Property Name="MedicineID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Attempts" Type="int" />
+          <Property Name="IsLoggedin" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Bill_Patient1">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillMedicine_Bill1">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="BillMedicine" Type="Self.BillMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BillMedicine">
+              <PropertyRef Name="BilIID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillMedicine_Medicine">
+          <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="BillMedicine" Type="Self.BillMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BillMedicine">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PateintRecord_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="PateintRecord" Type="Self.PateintRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PateintRecord">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordsMedicine_Medicine">
+          <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="RecordsMedicine" Type="Self.RecordsMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordsMedicine">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordsMedicine_PateintRecord">
+          <End Role="PateintRecord" Type="Self.PateintRecord" Multiplicity="1" />
+          <End Role="RecordsMedicine" Type="Self.RecordsMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PateintRecord">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordsMedicine">
+              <PropertyRef Name="RecordID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedicalStore_dbModelStoreContainer">
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillMedicine" EntityType="Self.BillMedicine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PateintRecord" EntityType="Self.PateintRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordsMedicine" EntityType="Self.RecordsMedicine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bill_Patient1" Association="Self.FK_Bill_Patient1">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillMedicine_Bill1" Association="Self.FK_BillMedicine_Bill1">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="BillMedicine" EntitySet="BillMedicine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillMedicine_Medicine" Association="Self.FK_BillMedicine_Medicine">
+            <End Role="Medicine" EntitySet="Medicine" />
+            <End Role="BillMedicine" EntitySet="BillMedicine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PateintRecord_Patient" Association="Self.FK_PateintRecord_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PateintRecord" EntitySet="PateintRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordsMedicine_Medicine" Association="Self.FK_RecordsMedicine_Medicine">
+            <End Role="Medicine" EntitySet="Medicine" />
+            <End Role="RecordsMedicine" EntitySet="RecordsMedicine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordsMedicine_PateintRecord" Association="Self.FK_RecordsMedicine_PateintRecord">
+            <End Role="PateintRecord" EntitySet="PateintRecord" />
+            <End Role="RecordsMedicine" EntitySet="RecordsMedicine" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedicalStore_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="BillAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BillDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BillStatus" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BillMedicines" Relationship="Self.FK_BillMedicine_Bill1" FromRole="Bill" ToRole="BillMedicine" />
+          <NavigationProperty Name="Patient" Relationship="MedicalStore_dbModel.FK_Bill_Patient1" FromRole="Bill" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="BillMedicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicineID" Type="Int32" Nullable="false" />
+          <Property Name="BilIID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK_BillMedicine_Bill1" FromRole="BillMedicine" ToRole="Bill" />
+          <NavigationProperty Name="Medicine" Relationship="Self.FK_BillMedicine_Medicine" FromRole="BillMedicine" ToRole="Medicine" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MedSellPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MedPurchasePrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsLacking" Type="Boolean" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="MedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MedDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MedType" Type="Int32" />
+          <Property Name="SoldQuantity" Type="Int32" />
+          <NavigationProperty Name="BillMedicines" Relationship="Self.FK_BillMedicine_Medicine" FromRole="Medicine" ToRole="BillMedicine" />
+          <NavigationProperty Name="RecordsMedicines" Relationship="MedicalStore_dbModel.FK_RecordsMedicine_Medicine" FromRole="Medicine" ToRole="RecordsMedicine" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PatientType" Type="Int32" />
+          <Property Name="PatientAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bills" Relationship="MedicalStore_dbModel.FK_Bill_Patient1" FromRole="Patient" ToRole="Bill" />
+          <NavigationProperty Name="PateintRecords" Relationship="MedicalStore_dbModel.FK_PateintRecord_Patient" FromRole="Patient" ToRole="PateintRecord" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Attempts" Type="Int32" />
+          <Property Name="IsLoggedin" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_BillMedicine_Bill1">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="BillMedicine" Type="Self.BillMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BillMedicine">
+              <PropertyRef Name="BilIID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillMedicine_Medicine">
+          <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="BillMedicine" Type="Self.BillMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BillMedicine">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedicalStore_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="BillMedicines" EntityType="Self.BillMedicine" />
+          <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_BillMedicine_Bill1" Association="Self.FK_BillMedicine_Bill1">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="BillMedicine" EntitySet="BillMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillMedicine_Medicine" Association="Self.FK_BillMedicine_Medicine">
+            <End Role="Medicine" EntitySet="Medicines" />
+            <End Role="BillMedicine" EntitySet="BillMedicines" />
+          </AssociationSet>
+          <EntitySet Name="PateintRecords" EntityType="MedicalStore_dbModel.PateintRecord" />
+          <EntitySet Name="RecordsMedicines" EntityType="MedicalStore_dbModel.RecordsMedicine" />
+          <AssociationSet Name="FK_Bill_Patient1" Association="MedicalStore_dbModel.FK_Bill_Patient1">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordsMedicine_Medicine" Association="MedicalStore_dbModel.FK_RecordsMedicine_Medicine">
+            <End Role="Medicine" EntitySet="Medicines" />
+            <End Role="RecordsMedicine" EntitySet="RecordsMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PateintRecord_Patient" Association="MedicalStore_dbModel.FK_PateintRecord_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PateintRecord" EntitySet="PateintRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordsMedicine_PateintRecord" Association="MedicalStore_dbModel.FK_RecordsMedicine_PateintRecord">
+            <End Role="PateintRecord" EntitySet="PateintRecords" />
+            <End Role="RecordsMedicine" EntitySet="RecordsMedicines" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PateintRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Diagnosis" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Treatment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="AppointmentDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Patient" Relationship="MedicalStore_dbModel.FK_PateintRecord_Patient" FromRole="PateintRecord" ToRole="Patient" />
+          <NavigationProperty Name="RecordsMedicines" Relationship="MedicalStore_dbModel.FK_RecordsMedicine_PateintRecord" FromRole="PateintRecord" ToRole="RecordsMedicine" />
+        </EntityType>
+        <EntityType Name="RecordsMedicine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecordID" Type="Int32" Nullable="false" />
+          <Property Name="MedicineID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medicine" Relationship="MedicalStore_dbModel.FK_RecordsMedicine_Medicine" FromRole="RecordsMedicine" ToRole="Medicine" />
+          <NavigationProperty Name="PateintRecord" Relationship="MedicalStore_dbModel.FK_RecordsMedicine_PateintRecord" FromRole="RecordsMedicine" ToRole="PateintRecord" />
+        </EntityType>
+        <Association Name="FK_Bill_Patient1">
+          <End Type="MedicalStore_dbModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="MedicalStore_dbModel.Bill" Role="Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordsMedicine_Medicine">
+          <End Type="MedicalStore_dbModel.Medicine" Role="Medicine" Multiplicity="1" />
+          <End Type="MedicalStore_dbModel.RecordsMedicine" Role="RecordsMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordsMedicine">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PateintRecord_Patient">
+          <End Type="MedicalStore_dbModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="MedicalStore_dbModel.PateintRecord" Role="PateintRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PateintRecord">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordsMedicine_PateintRecord">
+          <End Type="MedicalStore_dbModel.PateintRecord" Role="PateintRecord" Multiplicity="1" />
+          <End Type="MedicalStore_dbModel.RecordsMedicine" Role="RecordsMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PateintRecord">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordsMedicine">
+              <PropertyRef Name="RecordID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedicalStore_dbModelStoreContainer" CdmEntityContainer="MedicalStore_dbEntities">
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="BillAmount" ColumnName="BillAmount" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="BillStatus" ColumnName="BillStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillMedicines">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.BillMedicine">
+              <MappingFragment StoreEntitySet="BillMedicine">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
+                <ScalarProperty Name="BilIID" ColumnName="BilIID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicines">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.Medicine">
+              <MappingFragment StoreEntitySet="Medicine">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MedName" ColumnName="MedName" />
+                <ScalarProperty Name="MedSellPrice" ColumnName="MedSellPrice" />
+                <ScalarProperty Name="MedPurchasePrice" ColumnName="MedPurchasePrice" />
+                <ScalarProperty Name="IsLacking" ColumnName="IsLacking" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MedStatus" ColumnName="MedStatus" />
+                <ScalarProperty Name="MedDescription" ColumnName="MedDescription" />
+                <ScalarProperty Name="MedType" ColumnName="MedType" />
+                <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientType" ColumnName="PatientType" />
+                <ScalarProperty Name="PatientAddress" ColumnName="PatientAddress" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+                <ScalarProperty Name="IsLoggedin" ColumnName="IsLoggedin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PateintRecords">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.PateintRecord">
+              <MappingFragment StoreEntitySet="PateintRecord">
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Treatment" ColumnName="Treatment" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordsMedicines">
+            <EntityTypeMapping TypeName="MedicalStore_dbModel.RecordsMedicine">
+              <MappingFragment StoreEntitySet="RecordsMedicine">
+                <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

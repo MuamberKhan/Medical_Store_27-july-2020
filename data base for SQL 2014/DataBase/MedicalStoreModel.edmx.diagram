@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6502540a75b844179357d8bc497d5882" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicalStore_dbModel.Bill" Width="1.5" PointX="3.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.BillMedicine" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.Medicine" Width="1.5" PointX="8.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.Patient" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.User" Width="1.5" PointX="11.75" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_Bill_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_BillMedicine_Bill1" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_BillMedicine_Medicine" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.PateintRecord" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.RecordsMedicine" Width="1.5" PointX="6.375" PointY="3.25" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_RecordsMedicine_Medicine" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_PateintRecord_Patient" />
+        <AssociationConnector Association="MedicalStore_dbModel.FK_RecordsMedicine_PateintRecord" />
+        <EntityTypeShape EntityType="MedicalStore_dbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
