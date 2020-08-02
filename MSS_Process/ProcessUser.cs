@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Data;
 using LocalDataBase;
+using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
@@ -115,25 +116,37 @@ namespace BusinessLogic
                 context.SaveChanges();
             }
         }
-            
 
-        public string GetUserPasswordByName(string name)
+
+        public async Task<string> GetUserPasswordByName(string name)
         {
-            using (context = new MedicalStore_dbEntities())
+           var res= await Task.Run(() =>
             {
+                using (context = new MedicalStore_dbEntities())
+                {
 
-                string result= context.Users.Where(u => u.Username == name).Select(x => x.Password).FirstOrDefault();
-                return result;
-            }
+                    string result = context.Users.Where(u => u.Username == name).Select(x => x.Password).FirstOrDefault();
+                    return result;
+                }
+            });
+            return res;
+
         }
-        public User GetUser(string name, string pass)
+        public async Task<User> GetUser(string name, string pass)
         {
-            using (context = new MedicalStore_dbEntities())
+            var res = await Task.Run(() =>
             {
+                using (context = new MedicalStore_dbEntities())
+                {
 
-               var result= context.Users.Where(y => y.Password == pass && y.Username == name);
-                return result.First();
-            }
+                    var result = context.Users.Where(y => y.Password == pass && y.Username == name);
+                    return result.First();
+                }
+            });
+            return res;
+
+
+
         }
 
         public void LoggoutUser(User LoggedInUser)

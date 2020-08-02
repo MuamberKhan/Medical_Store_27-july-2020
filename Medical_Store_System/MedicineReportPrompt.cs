@@ -27,14 +27,15 @@ namespace Medical_Store_System
         #endregion
         private void btnYes_Click(object sender, EventArgs e)
         {
+            this.Close();
             RpMedicineInit rptInit = new RpMedicineInit(dateFrom.Value,dateTo.Value);
             rptInit.InitialiazeReport();
-            this.Hide();
+           
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void ReportPrompt_Load(object sender, EventArgs e)

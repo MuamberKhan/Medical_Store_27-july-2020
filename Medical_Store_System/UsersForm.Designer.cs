@@ -191,19 +191,21 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.pnltxtUserName);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox2.Location = new System.Drawing.Point(5, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(341, 348);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "User Credentials";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pnlcomboType
             // 
             this.pnlcomboType.BackColor = System.Drawing.Color.Red;
             this.pnlcomboType.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pnlcomboType.Location = new System.Drawing.Point(32, 209);
+            this.pnlcomboType.Location = new System.Drawing.Point(32, 216);
             this.pnlcomboType.Name = "pnlcomboType";
             this.pnlcomboType.Padding = new System.Windows.Forms.Padding(5);
             this.pnlcomboType.Size = new System.Drawing.Size(7, 23);
@@ -214,7 +216,7 @@
             // 
             this.pnltxtReEnterPass.BackColor = System.Drawing.Color.Red;
             this.pnltxtReEnterPass.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pnltxtReEnterPass.Location = new System.Drawing.Point(32, 152);
+            this.pnltxtReEnterPass.Location = new System.Drawing.Point(32, 159);
             this.pnltxtReEnterPass.Name = "pnltxtReEnterPass";
             this.pnltxtReEnterPass.Padding = new System.Windows.Forms.Padding(5);
             this.pnltxtReEnterPass.Size = new System.Drawing.Size(7, 23);
@@ -225,7 +227,7 @@
             // 
             this.pnltxtPassword.BackColor = System.Drawing.Color.Red;
             this.pnltxtPassword.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pnltxtPassword.Location = new System.Drawing.Point(32, 95);
+            this.pnltxtPassword.Location = new System.Drawing.Point(32, 109);
             this.pnltxtPassword.Name = "pnltxtPassword";
             this.pnltxtPassword.Padding = new System.Windows.Forms.Padding(5);
             this.pnltxtPassword.Size = new System.Drawing.Size(7, 23);
@@ -252,7 +254,7 @@
             "Admin",
             "User",
             "Guest"});
-            this.comboType.Location = new System.Drawing.Point(38, 209);
+            this.comboType.Location = new System.Drawing.Point(38, 216);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(276, 24);
             this.comboType.TabIndex = 42;
@@ -260,7 +262,7 @@
             // txtReEnterPass
             // 
             this.txtReEnterPass.Font = new System.Drawing.Font("Rockwell", 10F);
-            this.txtReEnterPass.Location = new System.Drawing.Point(38, 152);
+            this.txtReEnterPass.Location = new System.Drawing.Point(38, 159);
             this.txtReEnterPass.Name = "txtReEnterPass";
             this.txtReEnterPass.Size = new System.Drawing.Size(276, 23);
             this.txtReEnterPass.TabIndex = 41;
@@ -270,7 +272,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(28, 129);
+            this.label4.Location = new System.Drawing.Point(28, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 22);
             this.label4.TabIndex = 39;
@@ -281,7 +283,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Location = new System.Drawing.Point(28, 183);
+            this.label8.Location = new System.Drawing.Point(28, 190);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 22);
             this.label8.TabIndex = 40;
@@ -304,7 +306,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Rockwell", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(38, 95);
+            this.txtPassword.Location = new System.Drawing.Point(38, 109);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(276, 23);
@@ -313,7 +315,7 @@
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Rockwell", 10F);
-            this.txtUserName.Location = new System.Drawing.Point(38, 37);
+            this.txtUserName.Location = new System.Drawing.Point(38, 58);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(276, 23);
             this.txtUserName.TabIndex = 37;
@@ -323,7 +325,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(28, 13);
+            this.label5.Location = new System.Drawing.Point(28, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 22);
             this.label5.TabIndex = 33;
@@ -334,7 +336,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(28, 70);
+            this.label7.Location = new System.Drawing.Point(28, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 22);
             this.label7.TabIndex = 34;
@@ -344,7 +346,7 @@
             // 
             this.pnltxtUserName.BackColor = System.Drawing.Color.Red;
             this.pnltxtUserName.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pnltxtUserName.Location = new System.Drawing.Point(32, 37);
+            this.pnltxtUserName.Location = new System.Drawing.Point(32, 58);
             this.pnltxtUserName.Name = "pnltxtUserName";
             this.pnltxtUserName.Padding = new System.Windows.Forms.Padding(5);
             this.pnltxtUserName.Size = new System.Drawing.Size(7, 23);

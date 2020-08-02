@@ -223,9 +223,11 @@ namespace Medical_Store_System
         /// <returns>control as object</returns>
         private Control CheckValidity()
         {
-            if (string.IsNullOrEmpty(txtPatName.Text))
+            if (string.IsNullOrEmpty(txtPatName.Text) || txtPatName.Text.Length<=5)
+            {
                 return txtPatName;
-            if (string.IsNullOrEmpty(txtFatherName.Text))
+            }
+            if (string.IsNullOrEmpty(txtFatherName.Text) || txtFatherName.Text.Length <= 5)
                 return txtFatherName;
             if (string.IsNullOrEmpty(txtPatDiagnosis.Text))
                 return txtPatDiagnosis;
@@ -234,7 +236,7 @@ namespace Medical_Store_System
                 return txtPatDiagnosis;
             if (string.IsNullOrEmpty(txtPatTreatment.Text))
                 return txtPatTreatment;
-            if (string.IsNullOrEmpty(txtPatResid.Text))
+            if (string.IsNullOrEmpty(txtPatResid.Text) || txtPatResid.Text.Length <= 10)
                 return txtPatResid;
             if (string.IsNullOrEmpty(txtPatTreatment.Text))
                 return txtPatTreatment;

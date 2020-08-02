@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
@@ -129,11 +130,25 @@ namespace BusinessLogic
 
         public int GetPendingBillsCount()
         {
-            using (context=new MedicalStore_dbEntities())
+            using (context = new MedicalStore_dbEntities())
             {
-               var result= context.Bills.Where(p => p.BillStatus == false).Select(b => b.PatientID).Count();
+                var result = context.Bills.Where(p => p.BillStatus == false).Select(b => b.PatientID).Count();
                 return result;
             }
+        }
+
+        public async Task<int> GetPendingBillsCountAsync()
+        {
+            var res = await Task.Run(() =>
+              {
+                  using (context = new MedicalStore_dbEntities())
+                  {
+                      var result = context.Bills.Where(p => p.BillStatus == false).Select(b => b.PatientID).Count();
+                      return result;
+                  }
+              });
+            return res;
+
         }
 
         public int GetLackingMedicinesCount()
@@ -143,6 +158,18 @@ namespace BusinessLogic
             var count = context.Medicines.Where(m => m.IsLacking == true).Count();
                 return count;
             }
+        }
+        public async System.Threading.Tasks.Task<int> GetLackingMedicinesCountAsync()
+        {
+            var res = await Task.Run(() =>
+            {
+                using (context = new MedicalStore_dbEntities())
+                {
+                    var count = context.Medicines.Where(m => m.IsLacking == true).Count();
+                    return count;
+                }
+            });
+            return res;
         }
 
         public List<Medicine> GetAllMedicines()

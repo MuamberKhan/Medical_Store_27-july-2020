@@ -557,6 +557,49 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</value>
   </data>
+  <data name="picBoxLoading.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        Ow==
+</value>
+  </data>
   <data name="btnVisiblePass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

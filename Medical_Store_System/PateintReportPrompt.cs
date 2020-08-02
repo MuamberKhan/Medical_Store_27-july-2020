@@ -41,7 +41,7 @@ namespace Medical_Store_System
         private void btnYes_Click(object sender, EventArgs e)
         {
            
-            if (txtPateintID.Text!=null && txtPateintID.Text.Count()>1&&txtPatientName.Text!=null)
+            if (txtPateintID.Text!=null && txtPateintID.Text.Count()>=1&&txtPatientName.Text!=null)
             {
                 try
                 {

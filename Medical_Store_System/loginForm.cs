@@ -3,6 +3,8 @@ using LocalDataBase;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Medical_Store_System
@@ -28,32 +30,38 @@ namespace Medical_Store_System
             }
         }
         #endregion
-        private void btnOk_Click(object sender, EventArgs e)
+        private async void btnOk_Click(object sender, EventArgs e)
         {
-            btnOk.Text = "&Wait....";
+
             try
             {
-                if (txtUsername.Text == string.Empty || txtUsername.Text.Length<5)
+                if (txtUsername.Text == string.Empty || txtUsername.Text.Length < 5)
                 {
+
                     txtUsername.Focus();
                     pnlTextBoxUserName.Visible = true;
                     lblUsernameError.ForeColor = Color.Red;
-                    btnOk.Text = "&Enter";
+                    btnOk.Text = "&Enter to the system";
                     return;
+
                 }
                 else if (txtPassword.Text == string.Empty || txtPassword.Text.Length < 5)
                 {
                     txtPassword.Focus();
                     pnlTextBoxUPassword.Visible = true;
                     lblPasswordError.ForeColor = Color.Red;
-                    btnOk.Text = "&Enter";
+                    btnOk.Text = "&Enter to the system";
                     return;
                 }
-               
-                //Get passwords
-                var enteredPassword = processUser.Encrypt(txtPassword.Text);
-                var databasePassword = processUser.GetUserPasswordByName(txtUsername.Text);
+                picBoxLoading.Visible = true;
+                btnOk.Enabled = false;
+                btnOk.Text = "Wait.....";
 
+                //Get passwords 
+                var enteredPassword = processUser.Encrypt(txtPassword.Text);
+
+                //
+                var databasePassword =await processUser.GetUserPasswordByName(txtUsername.Text);
                 if (databasePassword != null)
                 {
 
@@ -61,14 +69,16 @@ namespace Medical_Store_System
 
                     if (databasePassword == enteredPassword)
                     {
-                        user = processUser.GetUser(txtUsername.Text, databasePassword);
+                        user =await processUser.GetUser(txtUsername.Text, databasePassword);
 
                         user.IsLoggedin = true;
                         processUser.UpdateUser(user);
 
 
-                        btnOk.Text = "&Enter";
-                      
+                        btnOk.Text = "&Enter to the system";
+                        picBoxLoading.Visible = false;
+                        btnOk.Enabled = true;
+
                         MainForm.Instance(user); //create an instance of form 3
                         this.Hide();             //hide me (form2)
                         MainForm.Instance().Show();       //show form3
@@ -77,29 +87,30 @@ namespace Medical_Store_System
                     }
                     else
                     {
-                        btnOk.Text = "&Enter";
+                        btnOk.Text = "&Enter to the system";
+                        picBoxLoading.Visible = false;
+                        btnOk.Enabled = true;
                         MessageBox.Show("Sorry the Password you entered is incorect");
                     }
                 }
                 else
                 {
-                    btnOk.Text = "&Enter";
+                    btnOk.Text = "&Enter to the system";
+                    picBoxLoading.Visible = false;
+                    btnOk.Enabled = true;
                     MessageBox.Show("Sorry the Username you entered is not existing");
                 }
+               //
             }
             catch (Exception ex)
             {
-                btnOk.Text = "&Enter";
+                btnOk.Text = "&Enter to the system";
+                picBoxLoading.Visible = false;
+                btnOk.Enabled = true;
                 MessageBox.Show("Error: " + ex.Message);
             }
-           
         }
-
-        private void CloseThisForm()
-        {
-            this.Close();
-        }
-
+      
         private void loginForm_Load(object sender, EventArgs e)
         {
             try
@@ -128,7 +139,7 @@ namespace Medical_Store_System
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Thread.CurrentThread.Abort();
             Application.Exit();
         }
 

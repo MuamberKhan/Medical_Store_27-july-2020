@@ -31,10 +31,10 @@ namespace Medical_Store_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGoHome = new System.Windows.Forms.Button();
             this.btnOpenCalclator = new System.Windows.Forms.Button();
@@ -334,9 +334,9 @@ namespace Medical_Store_System
             this.label10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label10.Location = new System.Drawing.Point(13, 147);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(229, 17);
+            this.label10.Size = new System.Drawing.Size(267, 17);
             this.label10.TabIndex = 36;
-            this.label10.Text = "Description/Home Precuations/etc";
+            this.label10.Text = "Description/Home Precuations/etc (500)";
             // 
             // label2
             // 
@@ -345,9 +345,9 @@ namespace Medical_Store_System
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(12, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Treatment";
+            this.label2.Text = "Treatment (500)";
             // 
             // txtPatDiagnosis
             // 
@@ -398,9 +398,9 @@ namespace Medical_Store_System
             this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label9.Location = new System.Drawing.Point(166, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.Size = new System.Drawing.Size(108, 17);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Diagnosis";
+            this.label9.Text = "Diagnosis (500)";
             // 
             // lstSelectedMedicines
             // 
@@ -527,12 +527,12 @@ namespace Medical_Store_System
             // 
             // dataGridPatients
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridPatients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridPatients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridPatients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -542,14 +542,14 @@ namespace Medical_Store_System
             this.dataGridPatients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dataGridPatients.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridPatients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.NullValue = "Not Set";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.NullValue = "Not Set";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridPatients.ColumnHeadersHeight = 40;
             this.dataGridPatients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -561,14 +561,14 @@ namespace Medical_Store_System
             this.dataGridPatients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridPatients.Location = new System.Drawing.Point(0, 384);
             this.dataGridPatients.Name = "dataGridPatients";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPatients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPatients.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridPatients.RowTemplate.Height = 35;
             this.dataGridPatients.RowTemplate.ReadOnly = true;
             this.dataGridPatients.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -579,12 +579,12 @@ namespace Medical_Store_System
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle7;
             this.ID.HeaderText = "Identity";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -597,6 +597,7 @@ namespace Medical_Store_System
             this.MedName.ReadOnly = true;
             this.MedName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MedName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            
             // 
             // PatientGender
             // 
@@ -761,17 +762,6 @@ namespace Medical_Store_System
         }
 
       
-
-        private void txtPatName_LostFocus1(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void TxtPatName_LostFocus(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
 
         #endregion
 

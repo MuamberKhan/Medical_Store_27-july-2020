@@ -74,7 +74,7 @@ namespace Medical_Store_System
             lblStatus.Text = "Loading Done!";
         }
 
-        public void mainForm_Load(object sender, EventArgs e)
+        public async void mainForm_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
 
@@ -92,12 +92,13 @@ namespace Medical_Store_System
 
 
             tmrTime.Enabled = true;
-
-            var lackingMedCount = processMedicine.GetLackingMedicinesCount();
+            lnkLackingMed.Text = "Loading....";
+            var lackingMedCount = await processMedicine.GetLackingMedicinesCountAsync();
             lnkLackingMed.Text = "Click here to view: " + "( " + lackingMedCount.ToString() + " )";
 
-            var PendingBills = processMedicine.GetPendingBillsCount();
+            var PendingBills =await processMedicine.GetPendingBillsCountAsync();
 
+            lnkPendingBills.Text = "Loading....";
             lnkPendingBills.Text = "You have some pending bills:  " + "( " + PendingBills + " )";
         }
         private void tmrTime_Tick(object sender, EventArgs e)
@@ -171,7 +172,6 @@ namespace Medical_Store_System
         private void lnkReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MedicineReportPrompt.Instance.ShowDialog();
-
         }
 
         private void btnOpenCalc_MouseHover(object sender, EventArgs e)
@@ -337,9 +337,7 @@ namespace Medical_Store_System
 
         private void lnkPatientReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PateintReportPrompt pateintReportPrompt = new PateintReportPrompt();
-            pateintReportPrompt.ShowDialog();
-            this.SendToBack();
+            PateintReportPrompt.Instance.ShowDialog();
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)

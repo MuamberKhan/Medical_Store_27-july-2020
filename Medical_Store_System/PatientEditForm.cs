@@ -53,10 +53,10 @@ namespace Medical_Store_System
                
                 lblStatus.Text = "Done";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Or you have entered an invalid ID of the pateint","Error !"+ex.Message);
             }
         }
 
@@ -94,7 +94,7 @@ namespace Medical_Store_System
                 btnUpdatePatient.Text = "Preparing for print...";
                 RptPateintInit rptPateintInit = new RptPateintInit(Convert.ToInt16(txtHiddenID.Text));
                 rptPateintInit.InitialiazeReport();
-                this.Close();
+               
             }
             catch (Exception ex)
             {

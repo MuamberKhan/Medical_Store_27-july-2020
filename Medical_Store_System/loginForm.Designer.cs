@@ -37,6 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picBoxLoading = new System.Windows.Forms.PictureBox();
             this.checkBoxRemember = new System.Windows.Forms.CheckBox();
             this.btnVisiblePass = new System.Windows.Forms.Button();
             this.lnklblCreateNewAccount = new System.Windows.Forms.LinkLabel();
@@ -56,6 +57,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +128,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.picBoxLoading);
             this.groupBox1.Controls.Add(this.checkBoxRemember);
             this.groupBox1.Controls.Add(this.btnVisiblePass);
             this.groupBox1.Controls.Add(this.lnklblCreateNewAccount);
@@ -148,6 +151,18 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // picBoxLoading
+            // 
+            this.picBoxLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxLoading.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLoading.Image")));
+            this.picBoxLoading.Location = new System.Drawing.Point(106, 292);
+            this.picBoxLoading.Name = "picBoxLoading";
+            this.picBoxLoading.Size = new System.Drawing.Size(48, 36);
+            this.picBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picBoxLoading.TabIndex = 53;
+            this.picBoxLoading.TabStop = false;
+            this.picBoxLoading.Visible = false;
             // 
             // checkBoxRemember
             // 
@@ -200,11 +215,11 @@
             this.btnOk.ForeColor = System.Drawing.Color.White;
             this.btnOk.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.Image")));
             this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOk.Location = new System.Drawing.Point(311, 300);
+            this.btnOk.Location = new System.Drawing.Point(100, 286);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(91, 39);
+            this.btnOk.Size = new System.Drawing.Size(301, 47);
             this.btnOk.TabIndex = 16;
-            this.btnOk.Text = "&Enter";
+            this.btnOk.Text = "&Enter to the system";
             this.btnOk.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -216,13 +231,10 @@
             this.btnExit.Font = new System.Drawing.Font("Rockwell", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.Location = new System.Drawing.Point(211, 300);
+            this.btnExit.Location = new System.Drawing.Point(42, 286);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(83, 39);
+            this.btnExit.Size = new System.Drawing.Size(52, 47);
             this.btnExit.TabIndex = 17;
-            this.btnExit.Text = "&EXIT";
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -354,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -381,5 +394,6 @@
         private System.Windows.Forms.CheckBox checkBoxRemember;
         private System.Windows.Forms.Panel pnlTextBoxUserName;
         private System.Windows.Forms.Panel pnlTextBoxUPassword;
+        private System.Windows.Forms.PictureBox picBoxLoading;
     }
 }
