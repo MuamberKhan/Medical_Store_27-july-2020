@@ -41,13 +41,16 @@ namespace BusinessLogic
             }
             return medType;
         }
-        
+        /// <summary>
+        /// Getting a pateint with Records by ID of the pateint
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Patient</returns>
         public Patient getPateintByID(int id)
         {
-            using (null)
+            using (context = new MedicalStore_dbEntities())
             {
-                context = new MedicalStore_dbEntities();
-                var reslt = context.Patients.Find(id);
+                var reslt = context.Patients.Include(p=>p.PateintRecords).First();
 
                 return reslt;
            }
@@ -62,6 +65,16 @@ namespace BusinessLogic
                 return Ids;
             }
         }
+
+        public object GetPateintRecords(int v)
+        {
+            using (context=new MedicalStore_dbEntities())
+            {
+                var result = context.Patients.Where(p => p.ID == v).Include(pateint => pateint.PateintRecords);
+                return result;
+            }
+        }
+
         /// <summary>
         /// This function return a tuple of List<PateintRecord> with specified Pateint ID with paging accordingly
         /// item 1: Patient

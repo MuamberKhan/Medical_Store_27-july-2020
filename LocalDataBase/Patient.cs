@@ -19,7 +19,6 @@ namespace LocalDataBase
             this.Bills = new HashSet<Bill>();
             this.PateintRecords = new HashSet<PateintRecord>();
         }
-    
         public int ID { get; set; }
         public string PatientName { get; set; }
         public Nullable<int> PatientType { get; set; }

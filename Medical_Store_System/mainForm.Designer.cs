@@ -852,6 +852,7 @@
             this.linkLabel3.TabIndex = 7;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Press here to view the details\r\n";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkTodaysSale_LinkClicked);
             // 
             // label8
             // 
@@ -1148,7 +1149,7 @@
             // 
             // userModelBindingSource
             // 
-            this.userModelBindingSource.DataSource = typeof(Medical_Store_System.Models.PateintDetailsModel);
+          //  this.userModelBindingSource.DataSource = typeof(Models.PateintDetailsModel);
             // 
             // MainForm
             // 

@@ -167,6 +167,18 @@
         YII=
 </value>
   </data>
+  <data name="btnSendMeEmail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAYhJREFUOE9j
+        oDvovvife+KpX4kTTv2YChUiDP7//8/Yf/qHy4TTP1f1HPv+o2jr+/8TT/7KgErjBr2nvsn2n/zZMOHU
+        z1tA/L9q96f/9hPv/e8+/uPLpBP/+aDKUEHD/v8sE07+DAU6czdQ0x+QRhCOWfriv2LN1f81ez6B+POh
+        yhEA6EQloBM7gJJPYZpAuOPoN7CtkmWX/ievfAUW6z/92xqqDQImnP4xHSjxG1kjCJfu+PBfo/EaWLPr
+        lIcw8RugMIFqhYBJJ35qTTz18wNMI9Df/yMXP/8vXX4ZrFmn+cb/7mPfoXI/iqDaUMGEkz/cgQp+dxz5
+        9t92AsTJICxXeeV/NTDwoIb/mHLyvzBUCyao2f+pXKv55j+YZhCOW/4SphkYdT9XQ5XiBp6zHkdrNt34
+        AdLsMOk+XDMYA10JVYYfBMx5FKDXdvNfF9TfEM0/b2MEHj7QcOBzI1DjP7gBp37WQaWIB/2nfgYBNX4F
+        4l9TT32RgAqTBiad/KUPTJVToFxqAwYGAJyiQF9zYk9FAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

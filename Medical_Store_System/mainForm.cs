@@ -93,12 +93,13 @@ namespace Medical_Store_System
 
             tmrTime.Enabled = true;
             lnkLackingMed.Text = "Loading....";
+            lnkPendingBills.Text = "Loading....";
             var lackingMedCount = await processMedicine.GetLackingMedicinesCountAsync();
             lnkLackingMed.Text = "Click here to view: " + "( " + lackingMedCount.ToString() + " )";
 
             var PendingBills =await processMedicine.GetPendingBillsCountAsync();
 
-            lnkPendingBills.Text = "Loading....";
+          
             lnkPendingBills.Text = "You have some pending bills:  " + "( " + PendingBills + " )";
         }
         private void tmrTime_Tick(object sender, EventArgs e)
@@ -431,6 +432,12 @@ namespace Medical_Store_System
         }
 
         private void btnDoctorDetails_Click(object sender, EventArgs e)
+        {
+            WarningForm warn = new WarningForm();
+            warn.ShowDialog();
+        }
+
+        private void lnkTodaysSale_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             WarningForm warn = new WarningForm();
             warn.ShowDialog();

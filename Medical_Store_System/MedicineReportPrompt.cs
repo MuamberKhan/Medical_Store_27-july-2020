@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Medical_Store_System.ProjectReports;
+using System;
 using System.Windows.Forms;
-using MSS_Reporting;
 
 namespace Medical_Store_System
 {
@@ -28,9 +28,9 @@ namespace Medical_Store_System
         private void btnYes_Click(object sender, EventArgs e)
         {
             this.Close();
-            RpMedicineInit rptInit = new RpMedicineInit(dateFrom.Value,dateTo.Value);
+            InitializeSaleEstimateReport rptInit = new InitializeSaleEstimateReport(dateFrom.Value, dateTo.Value);
             rptInit.InitialiazeReport();
-           
+
         }
 
         private void btnNo_Click(object sender, EventArgs e)

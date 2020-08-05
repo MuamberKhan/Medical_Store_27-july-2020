@@ -77,17 +77,20 @@
             // 
             // txtPatientName
             // 
-            this.txtPatientName.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientName.Font = new System.Drawing.Font("Rockwell", 8F);
+            this.txtPatientName.ForeColor = System.Drawing.Color.Silver;
             this.txtPatientName.Location = new System.Drawing.Point(115, 121);
             this.txtPatientName.Name = "txtPatientName";
-            this.txtPatientName.Size = new System.Drawing.Size(144, 26);
+            this.txtPatientName.Size = new System.Drawing.Size(144, 20);
             this.txtPatientName.TabIndex = 32;
+            this.txtPatientName.Text = "Its not functionable";
+            this.txtPatientName.Visible = false;
             // 
             // txtPateintID
             // 
             this.txtPateintID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtPateintID.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPateintID.Location = new System.Drawing.Point(115, 65);
+            this.txtPateintID.Location = new System.Drawing.Point(115, 69);
             this.txtPateintID.MaxLength = 100;
             this.txtPateintID.Name = "txtPateintID";
             this.txtPateintID.Size = new System.Drawing.Size(144, 26);
@@ -110,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 9);
+            this.label2.Location = new System.Drawing.Point(21, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 22);
             this.label2.TabIndex = 27;
@@ -121,7 +124,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell Condensed", 10.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 31);
+            this.label1.Location = new System.Drawing.Point(22, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 16);
             this.label1.TabIndex = 26;
@@ -162,7 +165,7 @@
             this.lblDated.AutoSize = true;
             this.lblDated.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDated.ForeColor = System.Drawing.Color.White;
-            this.lblDated.Location = new System.Drawing.Point(21, 64);
+            this.lblDated.Location = new System.Drawing.Point(21, 68);
             this.lblDated.Name = "lblDated";
             this.lblDated.Size = new System.Drawing.Size(72, 22);
             this.lblDated.TabIndex = 7;

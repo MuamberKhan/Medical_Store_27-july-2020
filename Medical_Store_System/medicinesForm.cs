@@ -193,10 +193,11 @@ namespace Medical_Store_System
             txtDescription.Clear();
             txtHiddenID.Clear();
             txtMedName.Clear();
+            txtDiscount.Clear();
             txtMedOrigPrice.Clear();
             txtMedSellPrice.Clear();
             numUpDwnQuantity.Value = 0;
-            cmboBxMedType.Text = "";
+            cmboBxMedType.SelectedIndex=1;
             btnSaveMedicine.Text = "Save";
         }
         private Control CheckValidity()
@@ -345,5 +346,6 @@ namespace Medical_Store_System
         {
             MainForm.Instance().Refresh();
         }
+
     }
 }

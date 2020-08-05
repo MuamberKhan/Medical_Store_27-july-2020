@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicineReport
+namespace Medical_Store_System.Models
 {
-    public class MedicineReportData
+   public class SaleEstimateReportModel
     {
         public int ID { get; set; }
         public string MedName { get; set; }
         public decimal MedSellPrice { get; set; }
         public decimal MedPurchasePrice { get; set; }
 
-        public int MedType { get; set; }
+        public string MedType { get; set; }
         public int SoldQuantity { get; set; }
 
         public int PID { get; set; }
-
     }
 }

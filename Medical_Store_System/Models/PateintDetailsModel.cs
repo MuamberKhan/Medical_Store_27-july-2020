@@ -17,7 +17,7 @@ namespace Medical_Store_System.Models
         public string PatientDescription { get; set; }
         public string PatientDiagnosis { get; set; }
         public string PatientTreatment { get; set; }
-        public Nullable<System.DateTime> AppointmentDate { get; set; }
+        public Nullable<DateTime> AppointmentDate { get; set; }
 
         public virtual ICollection<RecordsMedicine> RecordsMedicines { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }

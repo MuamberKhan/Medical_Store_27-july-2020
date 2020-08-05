@@ -75,11 +75,18 @@
       <HintPath>..\packages\FontAwesome.Sharp.5.13.0\lib\net45\FontAwesome.Sharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -116,6 +123,12 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="lackingMedFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,7 +155,10 @@
     </Compile>
     <Compile Include="Models\MedicineDetailsModel.cs" />
     <Compile Include="Models\MedicineTypeEnum.cs" />
+    <Compile Include="Models\PateintDetailsModel.cs" />
+    <Compile Include="Models\PatientReportModel.cs" />
     <Compile Include="Models\PatientTypeEnum.cs" />
+    <Compile Include="Models\SaleEstimateReportModel.cs" />
     <Compile Include="PateintReportPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +184,20 @@
       <DependentUpon>posForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectReports\InitializePatientReport.cs" />
+    <Compile Include="ProjectReports\InitializeSaleEstimateReport.cs" />
+    <Compile Include="ProjectReports\PatientPrintReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectReports\PatientPrintReport.Designer.cs">
+      <DependentUpon>PatientPrintReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectReports\SaleEstimateReportPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectReports\SaleEstimateReportPrint.Designer.cs">
+      <DependentUpon>SaleEstimateReportPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MedicineReportPrompt.cs">
       <SubType>Form</SubType>
@@ -229,6 +259,9 @@
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="lackingMedFrom.resx">
       <DependentUpon>lackingMedFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +285,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="posForm.resx">
       <DependentUpon>posForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectReports\PatientPrintReport.resx">
+      <DependentUpon>PatientPrintReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectReports\ReportPatient.rdlc" />
+    <EmbeddedResource Include="ProjectReports\ReportSaleEstimate.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectReports\SaleEstimateReportPrint.resx">
+      <DependentUpon>SaleEstimateReportPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,7 +332,13 @@
     </EmbeddedResource>
     <None Include="Medical_Store_System_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LocalDataBase.Patient.datasource" />
+    <None Include="Properties\DataSources\Medical_Store_System.Models.MedicinesReportModel.datasource" />
+    <None Include="Properties\DataSources\Medical_Store_System.Models.PateintDetailsModel.datasource" />
+    <None Include="Properties\DataSources\Medical_Store_System.Models.PatientReportModel.datasource" />
+    <None Include="Properties\DataSources\Medical_Store_System.Models.SaleEstimateReportModel.datasource" />
     <None Include="Properties\DataSources\Medical_Store_System.Models.UserModel.datasource" />
+    <None Include="Properties\DataSources\Medical_Store_System.ProjectReports.PatientPrintReport.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -335,11 +384,8 @@
       <Project>{df63783f-3186-47fb-8761-c8586fa626eb}</Project>
       <Name>MSS_Process</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MSS_Reporting\MSS_Reporting.csproj">
-      <Project>{13e65a17-71bf-4032-b988-091d2a3cc57e}</Project>
-      <Name>MSS_Reporting</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

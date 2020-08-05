@@ -131,7 +131,7 @@ namespace Medical_Store_System
                 if (commandButton.Text == "Save")
                 {
                     //Saving the data into the database.
-                    PateintRecord pateintRecord = new PateintRecord();
+                    LocalDataBase.PateintRecord pateintRecord = new LocalDataBase.PateintRecord();
                     pateintRecord.Patient = new Patient();
 
                     //Getting the data for the Pateint 
@@ -165,7 +165,7 @@ namespace Medical_Store_System
                 else if(commandButton.Text == "Update")
                 {
                     //Updating the data into the database.
-                    PateintRecord pateintRecord = new PateintRecord();
+                    LocalDataBase.PateintRecord pateintRecord = new LocalDataBase.PateintRecord();
 
                     //Getting the data for the Pateint 
                     int pateintID = int.Parse(txtHiddenID.Text);
@@ -208,12 +208,13 @@ namespace Medical_Store_System
         private void clearFields()
         {
             txtPatTreatment.Clear();
+            txtFatherName.Clear();
             txtPatName.Clear();
             txtPatResid.Clear();
             txtPatTreatment.Clear();
             txtPatDiagnosis.Clear();
             txtPatDescription.Clear();
-            cmboBxPatType.Text = "";
+            cmboBxPatType.SelectedIndex = 1;
             btnSavePatient.Text = "Save";             
             lstSelectedMedicines.Items.Clear();
         }
@@ -241,7 +242,7 @@ namespace Medical_Store_System
             if (string.IsNullOrEmpty(txtPatTreatment.Text))
                 return txtPatTreatment;
 
-            if (string.IsNullOrEmpty(cmboBxPatType.Text))
+            if (string.IsNullOrEmpty(cmboBxPatType.Text) )
             {
                 return cmboBxPatType;
             }

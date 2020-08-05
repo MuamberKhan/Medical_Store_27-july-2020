@@ -1,6 +1,5 @@
 ﻿using BusinessLogic;
 using LocalDataBase;
-using MSS_Reporting;
 using System;
 using System.Windows.Forms;
 
@@ -34,22 +33,15 @@ namespace Medical_Store_System
             try
             {
                 lblStatus.Text = "Loading......";
-                //If it is an edit request
+
                 txtPatName.Text = patient.PatientName;
                 txtHiddenID.Text = patient.ID.ToString();
-               // datePickerAppointment.Value = patient.AppointmentDate.Value;
+
                 cmboBxPatType.Text = patientProcess.getPateintType(patient.PatientType.Value);
                 txtPatResid.Text = patient.PatientAddress;
-                //txtPatTreatment.Text = patient.PatientTreatment;
-                //txtPatDiagnosis.Text = patient.PatientDiagnosis;
-                //txtPatDescription.Text = patient.PatientDescription;
 
                 lstSelectedMedicines.DisplayMember = "MedName";
                 lstSelectedMedicines.ValueMember = "ID";
-                //foreach (var item in patient.PatientMedicines)
-                //{
-                //    lstSelectedMedicines.Items.Add(item.Medicine.MedName);
-                //}
                
                 lblStatus.Text = "Done";
             }
@@ -92,8 +84,8 @@ namespace Medical_Store_System
                 btnUpdatePatient.Text = "Print";
 
                 btnUpdatePatient.Text = "Preparing for print...";
-                RptPateintInit rptPateintInit = new RptPateintInit(Convert.ToInt16(txtHiddenID.Text));
-                rptPateintInit.InitialiazeReport();
+                //RptPateintInit rptPateintInit = new RptPateintInit(Convert.ToInt16(txtHiddenID.Text));
+                //rptPateintInit.InitialiazeReport();
                
             }
             catch (Exception ex)

@@ -32,6 +32,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSendMeEmail = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.btnSendMeEmail);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.labelVersion);
@@ -101,6 +103,18 @@
             this.panel2.Size = new System.Drawing.Size(481, 282);
             this.panel2.TabIndex = 46;
             // 
+            // btnSendMeEmail
+            // 
+            this.btnSendMeEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMeEmail.Image")));
+            this.btnSendMeEmail.Location = new System.Drawing.Point(9, 203);
+            this.btnSendMeEmail.Name = "btnSendMeEmail";
+            this.btnSendMeEmail.Size = new System.Drawing.Size(159, 23);
+            this.btnSendMeEmail.TabIndex = 58;
+            this.btnSendMeEmail.Text = "Send me Email";
+            this.btnSendMeEmail.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSendMeEmail.UseVisualStyleBackColor = true;
+            this.btnSendMeEmail.Click += new System.EventHandler(this.btnSendMeEmail_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -116,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(37, 163);
+            this.label1.Location = new System.Drawing.Point(37, 168);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.label1.MaximumSize = new System.Drawing.Size(0, 50);
             this.label1.Name = "label1";
@@ -261,5 +275,6 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Label labelCompanyName;
+        private System.Windows.Forms.Button btnSendMeEmail;
     }
 }

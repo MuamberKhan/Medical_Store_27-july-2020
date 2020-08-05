@@ -126,5 +126,11 @@ namespace Medical_Store_System
         {
             this.Hide();
         }
+
+        private void btnSendMeEmail_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ContactForm.Instance.ShowDialog();
+        }
     }
 }

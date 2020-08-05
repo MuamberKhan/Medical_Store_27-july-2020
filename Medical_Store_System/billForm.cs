@@ -24,9 +24,9 @@ namespace Medical_Store_System
         {
 
 
-            if (_Instance == null)
-                _Instance = new BillForm(Name, BillAmount, time);
-
+            if (_Instance != null)
+                _Instance.Dispose();
+            _Instance = new BillForm(Name, BillAmount, time);
             return _Instance;
         }
         #endregion

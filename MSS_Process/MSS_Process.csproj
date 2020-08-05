@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessAboutme.cs" />
     <Compile Include="ProcessBills.cs" />
     <Compile Include="ProcessMedicine.cs" />
     <Compile Include="Models\MedicineTypeEnum.cs" />

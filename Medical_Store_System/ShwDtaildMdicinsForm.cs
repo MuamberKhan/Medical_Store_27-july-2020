@@ -129,6 +129,9 @@ namespace Medical_Store_System
                             break;
                         case 11:
                             ID = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[0].Value);
+                            WarningForm warn = new WarningForm();
+                            warn.ShowDialog();
+                            break;
 
                             DialogResult confrim = MessageBox.Show("Do you really want to delete this medicine parmanantly, the deletion operation cannot be undone", "Please confrim your action!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
                             if (confrim == DialogResult.Yes)
@@ -136,7 +139,7 @@ namespace Medical_Store_System
                                 processMedicine.DeleteMedicine(ID);
 
                             }
-                            break;
+                            
                         default:
                             break;
                     }

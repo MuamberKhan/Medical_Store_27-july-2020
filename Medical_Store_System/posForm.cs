@@ -23,11 +23,13 @@ namespace Medical_Store_System
         }
         public static posForm Instance(string searchTerm)
         {
-           
-                if (_Instance == null || _Instance.IsDisposed)
-                    _Instance = new posForm(searchTerm);
 
-                return _Instance;
+            if (_Instance != null)
+                _Instance.Dispose();
+
+            _Instance = new posForm(searchTerm);
+
+            return _Instance;
         }
         #endregion
 
@@ -100,15 +102,11 @@ namespace Medical_Store_System
             lblStatus.Text = "Please Wait.....";
             int MedID = Convert.ToInt32(gridViewMedicines[0, e.RowIndex].Value);
             var model = medicineProcess.getMedicineByID(MedID);
-                //context.Medicines.Where(m => m.ID == MedID).First();
-
           
-            medicineProcess.UpdateMedicine(model,false);
-
+            medicineProcess.UpdateMedicine(model,true);
             this.Close();
             BillForm.Instance("", model.MedSellPrice.Value, DateTime.Now.ToString()).ShowDialog();
             
-
             lblStatus.Text = "Deducted Successfully";
         }
 

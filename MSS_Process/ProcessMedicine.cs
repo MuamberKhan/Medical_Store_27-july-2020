@@ -3,6 +3,7 @@ using Process_Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -50,6 +51,23 @@ namespace BusinessLogic
             {
 
                 throw;
+            }
+        }
+
+        public Tuple<List<Medicine>,int> GetReportDataForMedicines()
+        {
+            using (context = new MedicalStore_dbEntities())
+            {
+               var bills = context.BillMedicines.Include(p=>p.Bill).ToList();
+
+                var soldMedicinesIDs = bills.Select(b=>b.MedicineID);
+                var soldMedicines= context.Medicines.Where(m => soldMedicinesIDs.Contains(m.ID)).ToList();
+
+                var pateintCount = bills.Select(b => b.Bill.PatientID).Distinct().Count();
+
+                Tuple<List<Medicine>, int> result = Tuple.Create(soldMedicines,pateintCount);
+
+                return result;
             }
         }
 

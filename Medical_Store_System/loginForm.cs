@@ -59,7 +59,8 @@ namespace Medical_Store_System
 
                 //Get passwords 
                 var enteredPassword = processUser.Encrypt(txtPassword.Text);
-
+                var processPateint  = new ProcessPatient();
+                var reslutforCheck = processPateint.GetPateintRecords(2);
                 //
                 var databasePassword =await processUser.GetUserPasswordByName(txtUsername.Text);
                 if (databasePassword != null)
@@ -107,7 +108,7 @@ namespace Medical_Store_System
                 btnOk.Text = "&Enter to the system";
                 picBoxLoading.Visible = false;
                 btnOk.Enabled = true;
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("If this error reoccurs again and again, \n Please consult to the develper, for immediate fix!","Error:"+ex.Message);
             }
         }
       
@@ -205,6 +206,12 @@ namespace Medical_Store_System
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void lnkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            WarningForm warn = new WarningForm();
+            warn.ShowDialog();
         }
     }
 }

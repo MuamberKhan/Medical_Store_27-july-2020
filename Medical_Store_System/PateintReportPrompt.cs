@@ -1,5 +1,5 @@
 ﻿using BusinessLogic;
-using MSS_Reporting;
+using Medical_Store_System.ProjectReports;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -48,21 +48,21 @@ namespace Medical_Store_System
                     int PateintID = Convert.ToInt16(txtPateintID.Text);
                   var  patientData = processPatient.getPateintByID(PateintID);
 
-                    DialogResult dResult = MessageBox.Show("Do you want to Edit details for the this report, for better look?", "Please Wait >>>>", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                    if (dResult.ToString() == "No")
-                    {
+                    //DialogResult dResult = MessageBox.Show("Do you want to Edit details for the this report, for better look?", "Please Wait >>>>", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    //if (dResult.ToString() == "No")
+                    //{
                         btnYes.Text = "Wait...";
-                        RptPateintInit rptPateintInit = new RptPateintInit(PateintID);
-                        rptPateintInit.InitialiazeReport();
-                    }
-                    else
-                    {
-                        PatientEditForm.Instance(patientData).Show();
-                    }
+                    InitializePatientReport initializePatientReport = new InitializePatientReport(PateintID);
+                    initializePatientReport.InitialiazeReport();
+                    //}
+                    //else
+                    //{
+                    //    PatientEditForm.Instance(patientData).ShowDialog();
+                    //}
                 }
                 catch (Exception ex)
                 {
-                    return;
+                    MessageBox.Show("Error:"+ex.Message,"if this error occurs again and again please consult the developer as soon as possible ");
                 }
             }
             else

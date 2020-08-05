@@ -104,11 +104,14 @@
             this.btnGoPatients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoPatients.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F);
             this.btnGoPatients.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGoPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnGoPatients.Image")));
+            this.btnGoPatients.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGoPatients.Location = new System.Drawing.Point(12, 239);
             this.btnGoPatients.Name = "btnGoPatients";
             this.btnGoPatients.Size = new System.Drawing.Size(144, 47);
             this.btnGoPatients.TabIndex = 2;
             this.btnGoPatients.Text = "Patients";
+            this.btnGoPatients.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnGoPatients.UseVisualStyleBackColor = true;
             this.btnGoPatients.Click += new System.EventHandler(this.btnGoPatients_Click);
             // 
@@ -117,11 +120,14 @@
             this.btnExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitApp.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F);
             this.btnExitApp.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnExitApp.Image = ((System.Drawing.Image)(resources.GetObject("btnExitApp.Image")));
+            this.btnExitApp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExitApp.Location = new System.Drawing.Point(12, 392);
             this.btnExitApp.Name = "btnExitApp";
             this.btnExitApp.Size = new System.Drawing.Size(144, 47);
             this.btnExitApp.TabIndex = 3;
             this.btnExitApp.Text = "Exit";
+            this.btnExitApp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnExitApp.UseVisualStyleBackColor = true;
             this.btnExitApp.Click += new System.EventHandler(this.btnExitApp_Click);
             // 
@@ -142,11 +148,14 @@
             this.btnGoHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoHome.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F);
             this.btnGoHome.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGoHome.Location = new System.Drawing.Point(12, 188);
+            this.btnGoHome.Image = ((System.Drawing.Image)(resources.GetObject("btnGoHome.Image")));
+            this.btnGoHome.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGoHome.Location = new System.Drawing.Point(12, 187);
             this.btnGoHome.Name = "btnGoHome";
-            this.btnGoHome.Size = new System.Drawing.Size(144, 47);
+            this.btnGoHome.Size = new System.Drawing.Size(144, 51);
             this.btnGoHome.TabIndex = 5;
             this.btnGoHome.Text = "DashBoard";
+            this.btnGoHome.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnGoHome.UseVisualStyleBackColor = true;
             this.btnGoHome.Click += new System.EventHandler(this.btnGoHome_Click);
             // 
@@ -155,11 +164,14 @@
             this.btnShowPOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowPOS.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F);
             this.btnShowPOS.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnShowPOS.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPOS.Image")));
+            this.btnShowPOS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShowPOS.Location = new System.Drawing.Point(12, 290);
             this.btnShowPOS.Name = "btnShowPOS";
             this.btnShowPOS.Size = new System.Drawing.Size(144, 47);
             this.btnShowPOS.TabIndex = 7;
-            this.btnShowPOS.Text = "Show Medicines";
+            this.btnShowPOS.Text = "Medicines";
+            this.btnShowPOS.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnShowPOS.UseVisualStyleBackColor = true;
             this.btnShowPOS.Click += new System.EventHandler(this.btnShowPOS_Click);
             // 
@@ -503,6 +515,7 @@
             this.txtDiscount.Size = new System.Drawing.Size(131, 24);
             this.txtDiscount.TabIndex = 27;
             this.txtDiscount.Text = "10";
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtMedSellPrice_TextChanged);
             // 
             // label9
             // 
@@ -542,6 +555,7 @@
             this.cmboBxMedType.Name = "cmboBxMedType";
             this.cmboBxMedType.Size = new System.Drawing.Size(131, 25);
             this.cmboBxMedType.TabIndex = 24;
+            this.cmboBxMedType.SelectedIndexChanged += new System.EventHandler(this.cmboBxMedType_SelectedIndexChanged);
             // 
             // label6
             // 

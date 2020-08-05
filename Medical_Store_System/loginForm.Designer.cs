@@ -156,7 +156,7 @@
             // 
             this.picBoxLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxLoading.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLoading.Image")));
-            this.picBoxLoading.Location = new System.Drawing.Point(106, 292);
+            this.picBoxLoading.Location = new System.Drawing.Point(107, 304);
             this.picBoxLoading.Name = "picBoxLoading";
             this.picBoxLoading.Size = new System.Drawing.Size(48, 36);
             this.picBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -206,6 +206,7 @@
             this.lnklblCreateNewAccount.TabIndex = 39;
             this.lnklblCreateNewAccount.TabStop = true;
             this.lnklblCreateNewAccount.Text = "Forgot Password";
+            this.lnklblCreateNewAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPass_LinkClicked);
             // 
             // btnOk
             // 
@@ -214,12 +215,12 @@
             this.btnOk.Font = new System.Drawing.Font("Rockwell", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnOk.ForeColor = System.Drawing.Color.White;
             this.btnOk.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.Image")));
-            this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOk.Location = new System.Drawing.Point(100, 286);
+            this.btnOk.Location = new System.Drawing.Point(101, 298);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(301, 47);
             this.btnOk.TabIndex = 16;
             this.btnOk.Text = "&Enter to the system";
+            this.btnOk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOk.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -231,9 +232,9 @@
             this.btnExit.Font = new System.Drawing.Font("Rockwell", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(42, 286);
+            this.btnExit.Location = new System.Drawing.Point(42, 298);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(52, 47);
+            this.btnExit.Size = new System.Drawing.Size(59, 47);
             this.btnExit.TabIndex = 17;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -295,9 +296,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(47, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(342, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(359, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
