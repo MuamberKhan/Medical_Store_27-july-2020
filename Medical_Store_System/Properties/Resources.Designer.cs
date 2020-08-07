@@ -59,15 +59,5 @@ namespace Medical_Store_System.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap android_icon_72x72 {
-            get {
-                object obj = ResourceManager.GetObject("android-icon-72x72", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

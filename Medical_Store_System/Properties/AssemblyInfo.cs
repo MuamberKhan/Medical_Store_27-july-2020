@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Medical Store System")]
+[assembly: AssemblyTitle("Medical Assisstance Software System")]
 [assembly: AssemblyDescription("This product is not meant for commercial use. Only authorizd people are rightful to use, modify the product under proper lisince.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("mak.org.pk")]

@@ -72,8 +72,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnPOS = new System.Windows.Forms.Button();
             this.txtSearchPOS = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblHeaderText = new System.Windows.Forms.Label();
             this.grpManageStore = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnViewDetMed = new System.Windows.Forms.Button();
@@ -118,7 +117,6 @@
             this.userModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip.SuspendLayout();
             this.pnlTopHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpManageStore.SuspendLayout();
             this.grpMangePat.SuspendLayout();
             this.FlowLayoutAlert.SuspendLayout();
@@ -448,40 +446,41 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(130, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // pnlTopHeader
             // 
             this.pnlTopHeader.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlTopHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlTopHeader.Controls.Add(this.label6);
             this.pnlTopHeader.Controls.Add(this.btnPOS);
             this.pnlTopHeader.Controls.Add(this.txtSearchPOS);
-            this.pnlTopHeader.Controls.Add(this.label1);
+            this.pnlTopHeader.Controls.Add(this.lblHeaderText);
             this.pnlTopHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopHeader.Location = new System.Drawing.Point(177, 41);
             this.pnlTopHeader.Name = "pnlTopHeader";
@@ -492,9 +491,10 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Rockwell Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(777, 3);
+            this.label6.Location = new System.Drawing.Point(777, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 9;
@@ -508,7 +508,7 @@
             this.btnPOS.ForeColor = System.Drawing.SystemColors.Control;
             this.btnPOS.Image = ((System.Drawing.Image)(resources.GetObject("btnPOS.Image")));
             this.btnPOS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPOS.Location = new System.Drawing.Point(1001, 28);
+            this.btnPOS.Location = new System.Drawing.Point(1001, 33);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Size = new System.Drawing.Size(47, 38);
             this.btnPOS.TabIndex = 6;
@@ -522,7 +522,7 @@
             // txtSearchPOS
             // 
             this.txtSearchPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchPOS.Location = new System.Drawing.Point(780, 27);
+            this.txtSearchPOS.Location = new System.Drawing.Point(780, 32);
             this.txtSearchPOS.Multiline = true;
             this.txtSearchPOS.Name = "txtSearchPOS";
             this.txtSearchPOS.Size = new System.Drawing.Size(269, 40);
@@ -530,27 +530,17 @@
             this.txtSearchPOS.MouseLeave += new System.EventHandler(this.txtSearchPOS_MouseLeave);
             this.txtSearchPOS.MouseHover += new System.EventHandler(this.txtSearchPOS_MouseHover);
             // 
-            // label1
+            // lblHeaderText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("PMingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(24, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(729, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hazrat Ali Medical Store and Technician, Deolai, Dalbar Dherai";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.lblHeaderText.AutoSize = true;
+            this.lblHeaderText.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderText.Font = new System.Drawing.Font("Rockwell Condensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderText.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblHeaderText.Location = new System.Drawing.Point(6, 8);
+            this.lblHeaderText.Name = "lblHeaderText";
+            this.lblHeaderText.Size = new System.Drawing.Size(733, 56);
+            this.lblHeaderText.TabIndex = 0;
+            this.lblHeaderText.Text = "Medical Assisstance Software System\r\n";
             // 
             // grpManageStore
             // 
@@ -715,7 +705,7 @@
             this.FlowLayoutAlert.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FlowLayoutAlert.Location = new System.Drawing.Point(933, 294);
             this.FlowLayoutAlert.Name = "FlowLayoutAlert";
-            this.FlowLayoutAlert.Size = new System.Drawing.Size(296, 255);
+            this.FlowLayoutAlert.Size = new System.Drawing.Size(296, 262);
             this.FlowLayoutAlert.TabIndex = 11;
             // 
             // label4
@@ -737,7 +727,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox2.Location = new System.Drawing.Point(3, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 73);
+            this.groupBox2.Size = new System.Drawing.Size(282, 63);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lacking Medicines";
@@ -762,9 +752,9 @@
             this.groupBox7.Controls.Add(this.lnkPendingBills);
             this.groupBox7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox7.Location = new System.Drawing.Point(3, 110);
+            this.groupBox7.Location = new System.Drawing.Point(3, 100);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(282, 73);
+            this.groupBox7.Size = new System.Drawing.Size(282, 62);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Bills";
@@ -790,7 +780,7 @@
             this.groupBox6.Controls.Add(this.lnkMedicinesReport);
             this.groupBox6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox6.Location = new System.Drawing.Point(3, 189);
+            this.groupBox6.Location = new System.Drawing.Point(3, 168);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(282, 73);
             this.groupBox6.TabIndex = 5;
@@ -897,7 +887,6 @@
             this.pnlSideButtons.Controls.Add(this.btnManageLogins);
             this.pnlSideButtons.Controls.Add(this.btnOpenCalc);
             this.pnlSideButtons.Controls.Add(this.pictureBox3);
-            this.pnlSideButtons.Controls.Add(this.pictureBox1);
             this.pnlSideButtons.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSideButtons.Location = new System.Drawing.Point(0, 41);
             this.pnlSideButtons.Name = "pnlSideButtons";
@@ -912,7 +901,7 @@
             this.btnAppointent.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAppointent.Image = ((System.Drawing.Image)(resources.GetObject("btnAppointent.Image")));
             this.btnAppointent.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAppointent.Location = new System.Drawing.Point(13, 297);
+            this.btnAppointent.Location = new System.Drawing.Point(13, 285);
             this.btnAppointent.Name = "btnAppointent";
             this.btnAppointent.Size = new System.Drawing.Size(150, 45);
             this.btnAppointent.TabIndex = 6;
@@ -930,7 +919,7 @@
             this.btnDoctorDetails.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDoctorDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorDetails.Image")));
             this.btnDoctorDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDoctorDetails.Location = new System.Drawing.Point(13, 356);
+            this.btnDoctorDetails.Location = new System.Drawing.Point(13, 344);
             this.btnDoctorDetails.Name = "btnDoctorDetails";
             this.btnDoctorDetails.Size = new System.Drawing.Size(150, 45);
             this.btnDoctorDetails.TabIndex = 5;
@@ -948,7 +937,7 @@
             this.btnExitApp.Font = new System.Drawing.Font("Rockwell Condensed", 15.75F);
             this.btnExitApp.ForeColor = System.Drawing.SystemColors.Control;
             this.btnExitApp.Image = ((System.Drawing.Image)(resources.GetObject("btnExitApp.Image")));
-            this.btnExitApp.Location = new System.Drawing.Point(13, 415);
+            this.btnExitApp.Location = new System.Drawing.Point(13, 403);
             this.btnExitApp.Name = "btnExitApp";
             this.btnExitApp.Size = new System.Drawing.Size(150, 45);
             this.btnExitApp.TabIndex = 3;
@@ -968,7 +957,7 @@
             this.btnManageLogins.ForeColor = System.Drawing.SystemColors.Control;
             this.btnManageLogins.Image = ((System.Drawing.Image)(resources.GetObject("btnManageLogins.Image")));
             this.btnManageLogins.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnManageLogins.Location = new System.Drawing.Point(13, 238);
+            this.btnManageLogins.Location = new System.Drawing.Point(13, 226);
             this.btnManageLogins.Name = "btnManageLogins";
             this.btnManageLogins.Size = new System.Drawing.Size(150, 45);
             this.btnManageLogins.TabIndex = 2;
@@ -988,7 +977,7 @@
             this.btnOpenCalc.ForeColor = System.Drawing.SystemColors.Control;
             this.btnOpenCalc.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenCalc.Image")));
             this.btnOpenCalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenCalc.Location = new System.Drawing.Point(13, 179);
+            this.btnOpenCalc.Location = new System.Drawing.Point(13, 167);
             this.btnOpenCalc.Name = "btnOpenCalc";
             this.btnOpenCalc.Size = new System.Drawing.Size(150, 45);
             this.btnOpenCalc.TabIndex = 1;
@@ -1004,9 +993,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(11, 466);
+            this.pictureBox3.Location = new System.Drawing.Point(11, 540);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(159, 153);
+            this.pictureBox3.Size = new System.Drawing.Size(71, 73);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -1045,6 +1034,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblCopyRight);
@@ -1147,10 +1137,6 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // userModelBindingSource
-            // 
-          //  this.userModelBindingSource.DataSource = typeof(Models.PateintDetailsModel);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1182,7 +1168,6 @@
             this.menuStrip.PerformLayout();
             this.pnlTopHeader.ResumeLayout(false);
             this.pnlTopHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpManageStore.ResumeLayout(false);
             this.grpMangePat.ResumeLayout(false);
             this.FlowLayoutAlert.ResumeLayout(false);
@@ -1215,14 +1200,13 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel pnlTopHeader;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeaderText;
         private System.Windows.Forms.GroupBox grpManageStore;
         private System.Windows.Forms.Button btnViewDetMed;
         private System.Windows.Forms.Button btnAvailableStock;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grpMangePat;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDetailedPatients;
         private System.Windows.Forms.Button btnMakeNewEntry;
         private System.Windows.Forms.Label label5;
