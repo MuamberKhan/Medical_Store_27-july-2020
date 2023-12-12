@@ -91,7 +91,7 @@ namespace Medical_Store_System
                         btnOk.Text = "&Enter to the system";
                         picBoxLoading.Visible = false;
                         btnOk.Enabled = true;
-                        MessageBox.Show("Sorry the Password you entered is incorect");
+                        MessageBox.Show("Sorry the Password you entered is incorrect");
                     }
                 }
                 else
@@ -99,7 +99,7 @@ namespace Medical_Store_System
                     btnOk.Text = "&Enter to the system";
                     picBoxLoading.Visible = false;
                     btnOk.Enabled = true;
-                    MessageBox.Show("Sorry the Username you entered is not existing");
+                    MessageBox.Show("Sorry the User-name you entered is not existing");
                 }
                //
             }
@@ -108,7 +108,7 @@ namespace Medical_Store_System
                 btnOk.Text = "&Enter to the system";
                 picBoxLoading.Visible = false;
                 btnOk.Enabled = true;
-                MessageBox.Show("If this error reoccurs again and again, \n Please consult to the develper, for immediate fix!","Error:"+ex.Message);
+                MessageBox.Show("If this error reoccurs again and again, \n Please consult to the developer, for immediate fix!","Error:"+ex.Message);
             }
         }
       
